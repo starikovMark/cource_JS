@@ -259,6 +259,23 @@ ol {
     width: 13.0625rem;
     height: 0.9625rem;
   }
+  .sneaker-title {
+    font-size: 2rem;
+  }
+  .sneaker-subtitle {
+    font-size: 1.5rem;
+    margin: 1.125rem 0;
+  }
+  .sneaker-text {
+    font-size: 1.125rem;
+  }
+  .sneaker-characteristic-title {
+    font-size: 1.5rem;
+  }
+  .sneaker-list-item-data,
+  .sneaker-list-item-name {
+    font-size: 1.125rem;
+  }
 }
 @media (max-width: 772px) {
   .container {
@@ -316,6 +333,15 @@ ol {
   .footer-list-link {
     font-size: 0.875rem;
   }
+  .sneaker-wrapper-text {
+    flex-direction: column;
+  }
+  .sneaker-text {
+    width: 100%;
+  }
+  .sneaker-characteristic {
+    width: 100%;
+  }
 }
 @media (max-width: 580px) {
   .container {
@@ -340,5 +366,29 @@ ol {
     height: 0.125rem;
     border-radius: 0.3125rem;
     background-color: #121723;
+  }
+  .sneaker-title {
+    font-size: 1.5rem;
+  }
+  .sneaker-subtitle {
+    font-size: 1.125rem;
+    margin: 0.625rem 0;
+  }
+  .sneaker-text {
+    font-size: 1rem;
+  }
+  .sneaker-characteristic-title {
+    font-size: 1.125rem;
+  }
+  .sneaker-list-item-data,
+  .sneaker-list-item-name {
+    font-size: 1rem;
+  }
+  .sneaker-list-item {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .sm-screen {
+    display: none;
   }
 }
