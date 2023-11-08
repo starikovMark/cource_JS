@@ -75,9 +75,7 @@ ol {
   margin: 0;
   margin-bottom: 1.5rem;
 }
-.hero-title-mobile {
-  display: none;
-}
+
 .hero-wrapper {
   display: flex;
   gap: 1.5rem;
@@ -289,12 +287,6 @@ ol {
     line-height: 1.5rem;
   }
   .hero-title {
-    display: none;
-  }
-  .hero-title-mobile {
-    display: block;
-    color: #121723;
-    font-family: "IBM Plex Mono", monospace;
     font-size: 1.5rem;
     font-style: normal;
     font-weight: 500;
