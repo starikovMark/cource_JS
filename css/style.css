@@ -339,6 +339,20 @@ ol {
   .container {
     max-width: 80%;
   }
+  .hero-card {
+    max-width: 100%;
+    width: 100%;
+  }
+  .hero-card-image {
+    width: 100%;
+    height: auto;
+  }
+  .hero-card-title {
+    font-size: 1.625rem;
+  }
+  .hero-card-subtitle {
+    font-size: 1.25rem;
+  }
   .header-list {
     display: none;
   }
@@ -378,7 +392,7 @@ ol {
   }
   .sneaker-list-item {
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 0.625rem;
   }
   .sm-screen {
     display: none;
