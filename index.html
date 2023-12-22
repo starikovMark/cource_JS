@@ -7,10 +7,32 @@
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
-    <input type="text" id="heroName" placeholder="Имя героя" />
-    <input type="text" id="heroClass" placeholder="Класс героя" />
-    <button id="addButton">Добавить героя</button>
-    <div id="heroesContainer"></div>
+    <section class="section hero">
+      <h1 class="hero-title">Добавь любимого героя из Доты</h1>
+      <div class="hero-wrapper">
+        <form action="#" class="form">
+          <div class="input-group">
+            <input
+              type="text"
+              id="heroName"
+              class="input"
+              placeholder="Имя героя"
+            />
+            <input
+              type="text"
+              id="heroClass"
+              class="input"
+              placeholder="Класс героя"
+            />
+          </div>
+          <button id="addButton" class="button">Добавить героя</button>
+        </form>
+        <div class="hero-heroes">
+          <h2 class="hero-heroes__title">Герои</h2>
+          <div id="heroesContainer"></div>
+        </div>
+      </div>
+    </section>
     <script src="./js/main.js"></script>
   </body>
 </html>
