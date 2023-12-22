@@ -19,6 +19,7 @@ function displayHeroes() {
     heroDiv.innerHTML = `
     <h3>${heroes[i][0]}</h3>
     <p>${heroes[i][1]}</p>`;
+
     heroesContainer.appendChild(heroDiv);
   }
 }
@@ -35,7 +36,5 @@ function addHero() {
   classInput.value = "";
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-  displayHeroes();
-  document.getElementById("addButton").addEventListener("click", addHero);
-});
+displayHeroes();
+document.getElementById("addButton").addEventListener("click", addHero);
