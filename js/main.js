@@ -154,3 +154,45 @@ function displayEnemyHero(hero) {
 
   hero.displayHero();
 }
+function countStatsSum(hero) {
+  let statsSum = 0;
+  // Последовательно прибавляем в переменную statsSum значения характеристик из объекта hero
+  statsSum += hero.stats.str;
+  statsSum += hero.stats.int;
+  statsSum += hero.stats.agi;
+  statsSum += hero.healthPoints;
+
+  return statsSum;
+}
+
+function arena(firstHero, secondHero) {
+  console.log(
+    `Да начнётся танцевальный баттл между ${firstHero.name} и ${secondHero.name}!`
+  );
+
+  let winner = null;
+
+  let fistHeroSum = countStatsSum(firstHero);
+  let secondHeroSum = countStatsSum(secondHero);
+
+  console.log("Сумма значений параметров первого героя: ", fistHeroSum);
+  console.log("Сумма значений параметров второго героя: ", secondHeroSum);
+
+  if (fistHeroSum > secondHeroSum) {
+    winner = firstHero;
+  } else if (fistHeroSum < secondHeroSum) {
+    winner = secondHero;
+  }
+
+  if (winner) {
+    console.log(`Ритмично чествуем победителя: ${winner.name}`);
+    alert(`Ритмично чествуем победителя: ${winner.name}`);
+  } else {
+    console.log("В танцевальном баттле победила дружба!");
+    alert("В танцевальном баттле победила дружба!");
+  }
+}
+
+startBattleButton.onclick = () => {
+  arena(playerHero, enemyHero);
+};

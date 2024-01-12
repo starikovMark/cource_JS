@@ -30,7 +30,6 @@ class Mage extends Hero {
     this.hasTectonicPotion = hasTectonicPotion; // зелье для тектоника
     this.mana = mana; // мана мага
   }
-
   //метод, расширяющий метод базового класса
   displayHero() {
     super.displayHero();
@@ -54,7 +53,6 @@ class Knight extends Hero {
     // где 1 - герой не устал, gameParameters.MAX_STAT - герой устал и не может делиться защитой
     this.energy = energy;
   }
-
   //вариативный метод, расширяющий метод базового класса
   displayHero() {
     super.displayHero();
