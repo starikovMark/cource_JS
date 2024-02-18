@@ -1,11 +1,23 @@
 import Styles from "./Card.module.css";
 
-export function Card() {
+export const Card = (props) => {
   return (
-    <div className={`card ${Styles.container}`}>
-      <img className={Styles.image} src="/images/brutal.png" />
-      <h3 className={Styles.title}>Брутальная крепость</h3>
-      <p>выбор смелых и непоколебимых личностей, вроде Аски</p>
-    </div>
+    <article className={Styles["card"]}>
+      <img src={props.image} className={Styles["card__image"]} />
+      <div className={Styles["card__content-block"]}>
+        <h3 className={Styles["card__title"]}>{props.title}</h3>
+        <p className={Styles["card__description"]}>{props.description}</p>
+        <div className={Styles["card__info-container"]}>
+          <p className={Styles["card__author"]}>
+            Автор:{" "}
+            <span className={Styles["card__accent"]}>{props.developer}</span>
+          </p>
+          <p className={Styles["card__votes"]}>
+            Голосов на сайте:
+            <span className={Styles["card__accent"]}>{props.users.length}</span>
+          </p>
+        </div>
+      </div>
+    </article>
   );
-}
+};
