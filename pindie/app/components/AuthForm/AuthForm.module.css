@@ -41,7 +41,6 @@
   width: 100%;
   gap: 8px;
 }
-
 .form__reset {
   font-family: "Rubic One", sans-serif;
   background-color: transparent;
@@ -59,7 +58,7 @@
 }
 
 .form__reset:disabled {
-  opacity: .9;
+  opacity: 0.9;
   pointer-events: none;
 }
 
@@ -85,6 +84,9 @@
 }
 
 .form__submit:disabled {
-  opacity: .5;
+  opacity: 0.5;
   pointer-events: none;
+}
+.form__message {
+  margin-bottom: 20px;
 }

@@ -1,7 +1,7 @@
 import { getGamesByCategory } from "../data/data-utils";
 import { CardsList } from "../components/CardsList/CardsList";
 
-export default function Pixel() {
+export default async function Pixel() {
   const pixelGames = getGamesByCategory("pixel");
   return (
     <main className={"main-inner"}>
