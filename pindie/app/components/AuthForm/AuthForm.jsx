@@ -6,45 +6,37 @@ import { authorize } from "@/app/api/api-utils";
 import { endpoints } from "@/app/api/config";
 import { isResponseOk, getMe } from "@/app/api/api-utils";
 import { useEffect } from "react";
-import { setJWT } from "@/app/api/api-utils";
+
+import { useStore } from "@/app/store/app-store";
 
 export const AuthForm = (props) => {
   const [authData, setAuthData] = useState({ identifier: "", password: "" });
-  const [userData, setUserData] = useState(null);
   const [message, setMessage] = useState({ status: null, text: null });
+  const authContext = useStore();
   const handleInput = (e) => {
     setAuthData({ ...authData, [e.target.name]: e.target.value });
   };
   const handleSubmit = async (e) => {
-    /* Предотвращаем стандартное поведение формы */
     e.preventDefault();
-    /* Вызываем функцию authorize с данными из формы */
     const userData = await authorize(endpoints.auth, authData);
-    /* Проверяем ответ сервера с помощью isResponseOk */
     if (isResponseOk(userData)) {
-      await getMe(endpoints.me, userData.jwt);
-      /* Записываем в стейт данные пользователя с сервера */
-      setUserData(userData);
-      setJWT(userData.jwt);
-      /*  */
-      props.setAuth(true);
-      /* Записываем сообщение об авторизации */
+      authContext.login(userData.user, userData.jwt); // login из контекста
       setMessage({ status: "success", text: "Вы авторизовались!" });
     } else {
-      /* Записываем сообщение об ошибке */
       setMessage({ status: "error", text: "Неверные почта или пароль" });
     }
   };
   useEffect(() => {
     let timer;
-    if (userData) {
+    if (authContext.user) {
+      // Данные о user из контекста
       timer = setTimeout(() => {
-        /* В props close лежит функция закрытия попапа */
+        setMessage({ status: null, text: null });
         props.close();
       }, 1000);
     }
     return () => clearTimeout(timer);
-  }, [userData]);
+  }, [authContext.user]); // Данные о user из контекста
   return (
     <form onSubmit={handleSubmit} className={Styles["form"]}>
       <h2 className={Styles["form__title"]}>Авторизация</h2>
