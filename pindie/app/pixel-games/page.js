@@ -1,7 +1,7 @@
 "use client";
 import { useGetDataByCategory } from "../api/api-hooks";
 import { Preloader } from "../components/Preloader/Preloader";
-import { CardsList } from "../components/CardsList/CardsList";
+import { CardsListSection } from "../components/CardsListSection/CardsListSection";
 import { endpoints } from "../api/config";
 
 export default function Pixel() {
@@ -9,7 +9,7 @@ export default function Pixel() {
   return (
     <main className={"main-inner"}>
       {pixelGames ? (
-        <CardsList id="pixel" title="Пиксельные" data={pixelGames} />
+        <CardsListSection id="pixel" title="Пиксельные" data={pixelGames} />
       ) : (
         <Preloader />
       )}

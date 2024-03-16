@@ -4,7 +4,7 @@ import { getGamesByCategory } from "./data/data-utils.js";
 
 import { Banner } from "./components/Banner/Banner.jsx";
 import { Promo } from "./components/Promo/Promo.jsx";
-import { CardsList } from "./components/CardsList/CardsList.jsx";
+import { CardsList } from "./components/CardsListSection/CardsList.jsx";
 
 export const getData = async (url) => {
   try {
