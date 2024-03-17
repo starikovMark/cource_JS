@@ -4,7 +4,7 @@ import { getGamesByCategory } from "./data/data-utils.js";
 
 import { Banner } from "./components/Banner/Banner.jsx";
 import { Promo } from "./components/Promo/Promo.jsx";
-import { CardsList } from "./components/CardsListSection/CardsList.jsx";
+import { CardsListSection } from "./components/CardsListSection/CardsListSection.jsx";
 
 export const getData = async (url) => {
   try {
@@ -29,8 +29,18 @@ export default async function Home() {
   return (
     <main className="main">
       <Banner />
-      <CardsList id="popular" title="Популярные" data={popularGames} />
-      <CardsList id="new" title="Новинки" data={newGames} />
+      <CardsListSection
+        type="slider"
+        id="popular"
+        title="Популярные"
+        data={popularGames}
+      />
+      <CardsListSection
+        type="slider"
+        id="new"
+        title="Новинки"
+        data={newGames}
+      />
       <Promo />
     </main>
   );

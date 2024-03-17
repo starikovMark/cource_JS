@@ -45,6 +45,7 @@ export const CardsSlider = (props) => {
       },
       modules: [Autoplay, Pagination],
     };
+    new Swiper(".swiper", options);
   }, []);
   return (
     <>
